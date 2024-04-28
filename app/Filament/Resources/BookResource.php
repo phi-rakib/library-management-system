@@ -29,14 +29,14 @@ class BookResource extends Resource
                 TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                
+
                 Select::make('authors')
                     ->multiple()
-                    ->relationship(titleAttribute:'name', name:'authors'),
-                
+                    ->relationship(titleAttribute: 'name', name: 'authors'),
+
                 Select::make('genres')
                     ->multiple()
-                    ->relationship(titleAttribute:'name', name:'genres'),
+                    ->relationship(titleAttribute: 'name', name: 'genres'),
 
                 TextInput::make('copies')
                     ->required()
@@ -54,7 +54,7 @@ class BookResource extends Resource
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),
-                
+
                 TextColumn::make('authors.name'),
 
                 TextColumn::make('genres.name'),
@@ -65,12 +65,12 @@ class BookResource extends Resource
 
                 TextColumn::make('isbn')
                     ->searchable(),
-                
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                
+
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
@@ -90,10 +90,20 @@ class BookResource extends Resource
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            RelationManagers\AuthorsRelationManager::class,
+            RelationManagers\GenresRelationManager::class,
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageBooks::route('/'),
+            'index' => Pages\ListBooks::route('/'),
+            'create' => Pages\CreateBook::route('/create'),
+            'edit' => Pages\EditBook::route('/{record}/edit'),
         ];
     }
 }
