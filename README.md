@@ -64,7 +64,7 @@ The Library Management System is a web application built with Laravel, designed 
 
 ## Contributors
 
-- [Your Name](https://github.com/phi-rakib)
+- [Mohammad Rakibul Haider](https://github.com/phi-rakib)
 
 ## License
 
