@@ -13,6 +13,7 @@ class Book extends Model
         'title',
         'copies',
         'isbn',
+        'rack_id',
     ];  
 
 
@@ -24,5 +25,10 @@ class Book extends Model
     public function genres()
     {
         return $this->belongsToMany(Genre::class);
+    }
+
+    public function rack()
+    {
+        return $this->belongsTo(Rack::class);
     }
 }
