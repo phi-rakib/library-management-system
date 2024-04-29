@@ -37,6 +37,9 @@ class BookResource extends Resource
                 Select::make('genres')
                     ->multiple()
                     ->relationship(titleAttribute: 'name', name: 'genres'),
+                
+                Select::make('rack_id')
+                    ->relationship(titleAttribute: 'name', name: 'rack'),
 
                 TextInput::make('copies')
                     ->required()
