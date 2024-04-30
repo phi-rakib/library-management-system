@@ -58,7 +58,8 @@ class BookResource extends Resource
                 TextColumn::make('title')
                     ->searchable(),
 
-                TextColumn::make('authors.name'),
+                TextColumn::make('authors.name')
+                    ->searchable(),
 
                 TextColumn::make('genres.name'),
 
