@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Rack;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class RackSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Rack::factory()->count(15)->create();
     }
 }
