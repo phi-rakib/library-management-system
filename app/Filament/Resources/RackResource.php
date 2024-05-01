@@ -49,7 +49,6 @@ class RackResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -58,10 +57,19 @@ class RackResource extends Resource
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageRacks::route('/'),
+            'index' => Pages\ListRacks::route('/'),
+            'create' => Pages\CreateRack::route('/create'),
+            'edit' => Pages\EditRack::route('/{record}/edit'),
         ];
     }
 }

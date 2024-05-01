@@ -4,9 +4,9 @@ namespace App\Filament\Resources\RackResource\Pages;
 
 use App\Filament\Resources\RackResource;
 use Filament\Actions;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Resources\Pages\ListRecords;
 
-class ManageRacks extends ManageRecords
+class ListRacks extends ListRecords
 {
     protected static string $resource = RackResource::class;
 
