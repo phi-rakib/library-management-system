@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\GenreResource\Pages;
 use App\Filament\Resources\GenreResource\RelationManagers;
+use App\Filament\Resources\GenreResource\RelationManagers\BooksRelationManager;
 use App\Models\Genre;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -60,7 +61,7 @@ class GenreResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            BooksRelationManager::class,
         ];
     }
 
