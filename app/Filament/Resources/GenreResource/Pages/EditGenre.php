@@ -4,16 +4,16 @@ namespace App\Filament\Resources\GenreResource\Pages;
 
 use App\Filament\Resources\GenreResource;
 use Filament\Actions;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Resources\Pages\EditRecord;
 
-class ManageGenres extends ManageRecords
+class EditGenre extends EditRecord
 {
     protected static string $resource = GenreResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\DeleteAction::make(),
         ];
     }
 }
