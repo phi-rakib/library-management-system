@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\RackResource\Pages;
 use App\Filament\Resources\RackResource\RelationManagers;
+use App\Filament\Resources\RackResource\RelationManagers\BooksRelationManager;
 use App\Models\Rack;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -60,7 +61,7 @@ class RackResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            BooksRelationManager::class
         ];
     }
 
